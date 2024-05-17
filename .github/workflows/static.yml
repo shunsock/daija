@@ -10,6 +10,9 @@ jobs:
     runs-on: ubuntu-latest
 
     steps:
+    - name: Checkout code
+      uses: actions/checkout@v4
+
     - name: Build and Start Containers
       run: docker compose up -d --build
 
