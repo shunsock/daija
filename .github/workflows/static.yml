@@ -17,17 +17,17 @@ jobs:
       run: docker compose up -d --build
 
     - name: Install Dependencies
-      run: docker compose exec app bash -c "cd ./projcet && /etc/poetry/bin/poetry install"
+      run: docker compose exec app bash -c "cd ./project && /etc/poetry/bin/poetry install"
 
     - name: Formatting Test (Run)
-      run: docker compose exec app bash -c "cd ./projcet && /etc/poetry/bin/poetry run black app tests"
+      run: docker compose exec app bash -c "cd ./project && /etc/poetry/bin/poetry run black app tests"
 
     - name: Formatting Test (Evaluate)
       run: |
         git diff --exit-code || (echo 'Failed: Run `poetry run black`' && exit 1)
 
     - name: Lint
-      run: docker compose exec app bash -c "cd ./projcet && /etc/poetry/bin/poetry run flake8 app tests"
+      run: docker compose exec app bash -c "cd ./project && /etc/poetry/bin/poetry run flake8 app tests"
 
     - name: Static Analysis
-      run: docker compose exec app bash -c "cd ./projcet && /etc/poetry/bin/poetry run mypy app"
+      run: docker compose exec app bash -c "cd ./project && /etc/poetry/bin/poetry run mypy app"
