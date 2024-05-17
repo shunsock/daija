@@ -81,4 +81,4 @@ This project is licensed under the MIT License. See the LICENSE file for more de
 Contributions are welcome! Please fork the repository and create a pull request with your changes. Make sure to follow the established code style and include tests for new features.
 
 ## Contact
-For questions or support, please open an issue in the repository or contact your-email@example.com.
+For questions or support, please open an issue in the repository or contact s.tsuchiya.business@gmail.com
