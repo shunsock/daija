@@ -1,0 +1,7 @@
+services:
+  app:
+    build: .
+    tty: true
+    volumes:
+      - ./src:/root/opt/src
+    working_dir: /root/opt/src
