@@ -1,0 +1,24 @@
+name: Python Script Test
+
+on:
+  pull_request:
+    branches:
+      - main
+
+jobs:
+  build:
+    runs-on: ubuntu-latest
+
+    steps:
+    - uses: Kesin11/actions-timeline@v2
+    - name: Checkout code
+      uses: actions/checkout@v4
+
+    - name: Build and Start Containers
+      run: docker compose up -d --build
+
+    - name: Install Dependencies
+      run: docker compose exec app bash -c "cd ./project && /etc/poetry/bin/poetry install"
+
+    - name: Test with Pytest
+      run: docker compose exec app bash -c "cd ./project && /etc/poetry/bin/poetry run pytest"
