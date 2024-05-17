@@ -22,3 +22,4 @@ jobs:
 
     - name: Test with Pytest
       run: docker compose exec app bash -c "cd ./project && /etc/poetry/bin/poetry run pytest"
+
